@@ -1,0 +1,33 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cascade
+    username: root
+    password: rh3dlekx123@
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+      format_sql: true
+
+  # Spring boot 2.6?? ??? spring.mvc.pathmatch.matching-strategy ?? ant_apth_matcher?? path_pattern_parser? ????? ?? ?????(swagger??)? ??
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+logging:
+  level:
+    root: info
+    web: debug
+    sql: info
+    go.ice.safeedu: debug
+    org.hibernate.type.descriptor.sql.BasicBinder: trace #  sql parameter
+    #    org.hibernate.type.descriptor.sql.BasicExtractor: trace # ?? ???
+
+
